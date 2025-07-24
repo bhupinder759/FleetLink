@@ -93,3 +93,11 @@ These features were not in the original task but added to enhance UX and perform
    ```bash
    git clone https://github.com/your-username/fleetlink-task.git
    cd fleetlink-task
+
+
+### 🔹 2. Backend Setup
+
+```bash
+cd backend
+npm install
+npm run dev
