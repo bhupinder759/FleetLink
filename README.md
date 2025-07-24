@@ -101,3 +101,10 @@ These features were not in the original task but added to enhance UX and perform
 cd backend
 npm install
 npm run dev
+
+### 🔹 2. Backend Setup
+
+```bash
+cd frontend
+npm install
+npm run dev
