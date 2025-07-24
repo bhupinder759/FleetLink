@@ -13,7 +13,7 @@ function BookingHistoryPage() {
   const fetchBookings = async () => {
     setLoading(true);
     try {
-      const res = await axios.get(`http://localhost:5000/api/bookings/get`, {
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/bookings/get`, {
         params: { customerId }
       });
       setBookings(res.data);
@@ -26,7 +26,7 @@ function BookingHistoryPage() {
 
   const cancelBooking = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/bookings/${id}`);
+      await axios.delete(`${import.meta.env.VITE_API_URL}/api/bookings/${id}`);
       toast.success("Booking canceled");
       setBookings(bookings.filter(b => b._id !== id));
     } catch (err) {

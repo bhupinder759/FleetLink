@@ -35,7 +35,7 @@ function SearchBookPage() {
         startTime: form.startTime.toISOString()
       };
 
-      const res = await axios.get('http://localhost:5000/api/vehicles/available', { params });
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/vehicles/available`, { params });
       setVehicles(res.data);
       if (res.data.length === 0) {
         toast("No vehicles available.");
@@ -50,7 +50,7 @@ function SearchBookPage() {
 
   const handleBooking = async (vehicleId) => {
     try {
-      await axios.post("http://localhost:5000/api/bookings", {
+      await axios.post(`${import.meta.env.VITE_API_URL}/api/bookings`, {
         vehicleId,
         fromPincode: form.fromPincode,
         toPincode: form.toPincode,
